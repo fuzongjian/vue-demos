@@ -6,9 +6,12 @@ import VueResource from 'vue-resource'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(ElementUI)
+Vue.use(MintUI)
 /* eslint-disable no-new */
 router.beforeEach((to,from,next) =>{
   /* 路由发生改变修改页面的title */
