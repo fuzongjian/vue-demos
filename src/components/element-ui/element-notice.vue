@@ -75,6 +75,21 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <p>Notification通知</p>
+    <div class="item-container">
+      <p>基本用法</p>
+      <el-button plain @click="opennotice(1)">可自动关闭</el-button>
+      <el-button plain @click="opennotice(2)">不会自动关闭</el-button>
+    </div>
+    <div class="item-container">
+      <p>带有倾向性的</p>
+      <el-button @click="clickNum(1)">成功</el-button>
+      <el-button @click="clickNum(2)">警告</el-button>
+      <el-button @click="clickNum(3)">消息</el-button>
+      <el-button @click="clickNum(4)">错误</el-button>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -173,6 +188,47 @@
                 message: '已取消删除'
               })
             })
+          },
+          opennotice(index){
+            if (index === 1){
+              const  h = this.$createElement;
+              this.$notify({
+                title: '报告',
+                message: h('i',{style: 'color: teal'},"求知若渴，虚怀若谷")
+              })
+            }else{
+              this.$notify({
+                title: '提示',
+                message: '这是一条不会自动关闭的消息',
+                duration: 0
+              })
+            }
+          },
+          clickNum(index){
+            if (index === 1){
+              this.$notify({
+                title: '成功',
+                message: '这是一条成功的提示信息!!!',
+                type: 'success'
+              })
+            }else if(index === 2){
+              this.$notify({
+                title: '警告',
+                message: '这是一条警告信息!!!',
+                type: 'warning'
+              })
+            }else if(index === 3){
+              this.$notify({
+                title: '消息',
+                message: '这是一条信息!!!'
+              })
+            }else{
+              this.$notify({
+                title: '错误',
+                message: '这是一条错误信息!!!',
+                type: 'error'
+              })
+            }
           }
         }
     }

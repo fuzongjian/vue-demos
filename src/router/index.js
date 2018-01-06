@@ -8,6 +8,8 @@ import elementcontainer from '../components/element-ui/element-container'
 import elementform from '../components/element-ui/element-form'
 import elementdata from '../components/element-ui/element-data'
 import elementnotice from '../components/element-ui/element-notice'
+import elementnav from '../components/element-ui/element-nav'
+import elementother from '../components/element-ui/element-other'
 Vue.use(Router)
 
 export default new Router({
@@ -76,6 +78,22 @@ export default new Router({
       component: elementnotice,
       meta: {
         title: '通知'
+      }
+    },
+    {
+      path: '/element/nav',
+      name: 'element-nav',
+      component: elementnav,
+      meta: {
+        title: '导航栏'
+      }
+    },
+    {
+      path: '/element/other',
+      name: 'element-other',
+      component: elementother,
+      meta: {
+        title: '其他'
       }
     }
   ]
